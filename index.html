@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body { 
+            background-color: #000; /* Fundo do app */
+            color: #333; 
+            font-family: -apple-system, system-ui, sans-serif; 
+            margin: 0; 
+            padding: 10px; 
+        }
+        .container { display: flex; flex-direction: column; gap: 15px; }
+        
+        .card { 
+            background: #f0f0f0; /* Cinza claro para camuflar o fundo dos logos */
+            border-radius: 15px; 
+            padding: 20px; 
+            border-left: 6px solid #c60c0c;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+        }
+        
+        .label { 
+            font-size: 11px; 
+            color: #666; 
+            text-transform: uppercase; 
+            margin-bottom: 15px; 
+            font-weight: 800;
+            letter-spacing: 1px;
+            display: block;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 5px;
+        }
+        
+        .placar-row { display: flex; justify-content: space-between; align-items: center; }
+        .time { flex: 1; text-align: center; }
+        
+        /* Logos Grandes (65px) */
+        .time img { 
+            width: 65px; 
+            height: 65px; 
+            object-fit: contain; 
+        }
+        
+        .time p { font-size: 13px; margin: 8px 0 0; font-weight: bold; color: #000; }
+        .score { font-size: 36px; font-weight: 900; flex: 1; text-align: center; color: #c60c0c; }
+        .vs { font-size: 18px; color: #999; flex: 1; text-align: center; font-weight: bold; }
+        
+        .detalhes { 
+            font-size: 12px; 
+            color: #444; 
+            text-align: center; 
+            margin-top: 15px; 
+            line-height: 1.6;
+            background: rgba(0,0,0,0.05);
+            padding: 10px;
+            border-radius: 8px;
+        }
+        .campeonato { color: #c60c0c; font-weight: bold; text-transform: uppercase; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card" style="border-left-color: #555;">
+            <span class="label">Último Jogo - Intercontinental</span>
+            <div class="placar-row">
+                <div class="time">
+                    <img src="flamengo.png">
+                    <p>FLAMENGO</p>
+                </div>
+                <div class="score">1 - 1</div>
+                <div class="time">
+                    <img src="paris-saint-germain.png">
+                    <p>PSG</p>
+                </div>
+            </div>
+            <div class="detalhes">📅 17/12/2025</div>
+        </div>
+
+        <div class="card">
+            <span class="label">Próximo Jogo - <span class="campeonato">Carioca</span></span>
+            <div class="placar-row">
+                <div class="time">
+                    <img src="flamengo.png">
+                    <p>FLAMENGO</p>
+                </div>
+                <div class="vs">VS</div>
+                <div class="time">
+                    <img src="portuguesa-rj.png">
+                    <p>PORTUGUESA-RJ</p>
+                </div>
+            </div>
+            <div class="detalhes">
+                🏟️ Raulino de Oliveira (Volta Redonda-RJ)<br>
+                🗓️ Domingo, 11/01/2026 às 18h<br>
+                📺 <b>Globo, Premiere, FlaTV</b>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
