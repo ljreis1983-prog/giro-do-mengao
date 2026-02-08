@@ -4,62 +4,75 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        body { background-color: #000; margin: 0; padding: 10px; font-family: sans-serif; }
-        .container { display: flex; flex-direction: column; gap: 12px; }
+        body { 
+            background-color: #000; 
+            margin: 0; 
+            padding: 10px; 
+            font-family: sans-serif; 
+        }
+        .container { 
+            display: flex; 
+            flex-direction: column; 
+            gap: 12px; 
+            max-width: 500px; /* Ajuste opcional para largura máxima */
+            margin: 0 auto;
+        }
         
-        /* Estilo base dos cards */
+        /* Mantendo o seu layout de card */
         .card { 
             background: #f0f0f0; 
             border-radius: 15px; 
-            padding: 20px; 
+            padding: 15px; 
             border-left: 6px solid #c60c0c;
+            overflow: hidden; /* Garante que o widget respeite o arredondamento */
         }
 
-        /* Card Compacto para o jogo anterior */
-        .card.compacto {
-            padding: 12px 20px; /* Reduzimos o respiro em cima e embaixo */
+        .label { 
+            font-size: 11px; 
+            color: #666; 
+            text-transform: uppercase; 
+            font-weight: 800; 
+            display: block; 
+            border-bottom: 1px solid #ddd; 
+            padding-bottom: 5px; 
+            margin-bottom: 10px; 
         }
 
-        .label { font-size: 11px; color: #666; text-transform: uppercase; font-weight: 800; display: block; border-bottom: 1px solid #ddd; padding-bottom: 5px; margin-bottom: 10px; }
-        .placar-row { display: flex; justify-content: space-between; align-items: center; }
-        .time { flex: 1; text-align: center; }
-        .time img { width: 55px; height: 55px; object-fit: contain; } /* Diminuí levemente de 65 para 55 no compacto */
-        .time p { font-size: 12px; margin: 5px 0 0; font-weight: bold; color: #000; }
-        .score { font-size: 32px; font-weight: 900; flex: 1; text-align: center; color: #c60c0c; }
-        .vs { font-size: 18px; color: #999; flex: 1; text-align: center; font-weight: bold; }
-        
-        /* Estilo do rodapé do card */
-        .detalhes { font-size: 12px; color: #444; text-align: center; margin-top: 12px; padding: 8px; background: rgba(0,0,0,0.05); border-radius: 8px; }
-        .detalhes.mini { margin-top: 8px; padding: 4px; background: transparent; color: #888; } /* Detalhe menor para o anterior */
-        
-        .campeonato { color: #c60c0c; font-weight: bold; }
+        /* Estilo para o link de créditos do widget */
+        #powered-by {
+            font-size: 10px;
+            color: #555;
+            text-align: center;
+            margin-top: 5px;
+        }
+        #powered-by-link {
+            color: #c60c0c;
+            text-decoration: none;
+            font-weight: bold;
+            margin-left: 4px;
+        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="card compacto" style="border-left-color: #555;">
-            <span class="label">Último Jogo - Intercontinental</span>
-            <div class="placar-row">
-                <div class="time"><img src="flamengo.png"><p>FLAMENGO</p></div>
-                <div class="score">1 - 1</div>
-                <div class="time"><img src="paris-saint-germain.png"><p>PSG</p></div>
-            </div>
-            <div class="detalhes mini">📅 17/12/2025</div>
-        </div>
 
+    <div class="container">
         <div class="card">
-            <span class="label">Próximo Jogo - <span class="campeonato">Carioca</span></span>
-            <div class="placar-row">
-                <div class="time"><img src="flamengo.png" style="width: 65px; height: 65px;"><p>FLAMENGO</p></div>
-                <div class="vs">VS</div>
-                <div class="time"><img src="portuguesa-rj.png" style="width: 65px; height: 65px;"><p>PORTUGUESA-RJ</p></div>
+            <span class="label">Jogos do Flamengo (Automático)</span>
+            
+            <div data-widget-type="entityScores" 
+                 data-entity-type="team" 
+                 data-entity-id="1215" 
+                 data-lang="pt-br" 
+                 data-widget-id="8620922c-1c43-48d7-aba0-cf6dd9b70793" 
+                 data-limit-height-display="640">
             </div>
-            <div class="detalhes">
-                🏟️ Raulino de Oliveira (Volta Redonda-RJ)<br>
-                🗓️ Dom, 11/01/2026 às 18h<br>
-                📺 <b>Globo, Premiere, FlaTV</b>
+
+            <div id="powered-by">
+                Desenvolvido por <a id="powered-by-link" href="https://www.365scores.com/pt-br" target="_blank">365Scores.com</a>
             </div>
         </div>
     </div>
+
+    <script src="https://widgets.365scores.com/main.js"></script>
 </body>
 </html>
