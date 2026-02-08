@@ -13,54 +13,66 @@
         .container { 
             display: flex; 
             flex-direction: column; 
-            gap: 12px; 
-            max-width: 500px; /* Ajuste opcional para largura máxima */
+            gap: 15px; 
+            max-width: 450px; 
             margin: 0 auto;
         }
         
-        /* Mantendo o seu layout de card */
+        /* Seu estilo original de Card adaptado para o tema Dark */
         .card { 
-            background: #f0f0f0; 
+            background: #1a1a1a; /* Escurecido para combinar com o widget dark */
             border-radius: 15px; 
             padding: 15px; 
             border-left: 6px solid #c60c0c;
-            overflow: hidden; /* Garante que o widget respeite o arredondamento */
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
         }
+
+        .card.anterior { border-left-color: #555; }
 
         .label { 
             font-size: 11px; 
-            color: #666; 
+            color: #aaa; 
             text-transform: uppercase; 
             font-weight: 800; 
             display: block; 
-            border-bottom: 1px solid #ddd; 
-            padding-bottom: 5px; 
+            border-bottom: 1px solid #333; 
+            padding-bottom: 8px; 
             margin-bottom: 10px; 
         }
 
-        /* Estilo para o link de créditos do widget */
+        /* Créditos menores no rodapé */
         #powered-by {
-            font-size: 10px;
-            color: #555;
+            font-size: 9px;
+            color: #444;
             text-align: center;
-            margin-top: 5px;
+            margin-top: 10px;
         }
-        #powered-by-link {
-            color: #c60c0c;
-            text-decoration: none;
-            font-weight: bold;
-            margin-left: 4px;
-        }
+        #powered-by-link { color: #666; text-decoration: none; }
     </style>
 </head>
 <body>
 
-<div data-widget-type="entityScores" data-entity-type="team" data-entity-id="1215" data-lang="pt-br" data-widget-id="af5e55ad-2dee-409b-8041-7c92ded5e1ee" data-limit-height-display="440" data-use-scrolling-buttons="true" data-theme="dark"></div>
-<div id="powered-by">Desenvolvido por<a id="powered-by-link" href="https://www.365scores.com/pt-br" target="_blank">365Scores.com</a></div>
-<script src="https://widgets.365scores.com/main.js"></script>
+    <div class="container">
+        
+        <div class="card">
+            <span class="label">Calendário de Jogos - Flamengo</span>
+            
+            <div data-widget-type="entityScores" 
+                 data-entity-type="team" 
+                 data-entity-id="1215" 
+                 data-lang="pt-br" 
+                 data-widget-id="e6256acc-c98e-41de-a003-12fd1d54ed61" 
+                 data-limit-height-display="440" 
+                 data-theme="dark">
+            </div>
+
+            <div id="powered-by">
+                Desenvolvido por <a id="powered-by-link" href="https://www.365scores.com/pt-br" target="_blank">365Scores.com</a>
+            </div>
+        </div>
+
     </div>
 
     <script src="https://widgets.365scores.com/main.js"></script>
 </body>
 </html>
-
